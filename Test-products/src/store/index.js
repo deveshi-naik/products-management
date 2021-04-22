@@ -12,7 +12,6 @@ const store = new Vuex.Store({
             price: '1000$',
             rating: 3,
             location: 'gujarat',
-            imgURL: 'imgURL',
             trashFlag: false
         }]
     },

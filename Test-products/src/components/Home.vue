@@ -19,6 +19,7 @@
                                 class="custom-card"
                                 @click="onCardClick(value)"
                             >
+                                <b-img src="https://picsum.photos/1024/400/?image=41" class="mb-3" style="height: 175px;" fluid alt="Responsive image"></b-img>
                                 <p> 
                                     <span class="font-weight-bold">
                                         Title:
@@ -98,6 +99,6 @@ export default {
 
 <style scoped>
 .custom-card {
-    height: 18rem;
+    height: 21rem;
 }
 </style>

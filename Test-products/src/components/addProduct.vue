@@ -44,14 +44,6 @@
                     ></b-form-input>
                 </b-form-group>
 
-                <b-form-group label="Image URL:">
-                    <b-form-input
-                        placeholder="Enter product image url"
-                        v-model="imgURL"
-                        required
-                    ></b-form-input>
-                </b-form-group>
-
                 <b-button type="submit" variant="primary">Submit</b-button>
                 <b-button type="reset" variant="danger">Reset</b-button>
             </b-form>
@@ -68,8 +60,7 @@ export default {
             description: '',
             price: '',
             rating: '',
-            location: '',
-            imgURL: ''
+            location: ''
         }
     },
     methods: {
@@ -82,7 +73,6 @@ export default {
                 price: this.price,
                 rating: this.rating,
                 location: this.location,
-                imgURL: this.imgURL,
                 trashFlag: false
             }
             this.$store.dispatch("productListAction", productData);
@@ -94,8 +84,7 @@ export default {
             this.description = '',
             this.price = '',
             this.rating = '',
-            this.location = '',
-            this.imgURL = ''
+            this.location = ''
         }
     }
 }
