@@ -5,16 +5,31 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
-        productsList: []
+        productsList: [{
+            id: 1,
+            title: 'product 1',
+            description: 'here is product description',
+            price: '1000$',
+            rating: 3,
+            location: 'gujarat',
+            imgURL: 'imgURL',
+            trashFlag: false
+        }]
     },
     mutations: {
-        PRODUCTS_LIST_MUTATION(state, payload) {
+        PRODUCTS_LIST_ADD_MUTATION(state, payload) {
             return state.productsList.push(payload)
+        },
+        PRODUCTS_LIST_UPDATE_MUTATION(state, payload) {
+            return state.productsList = payload
         }
     },
     actions: {
         productListAction(context, payload) {
-            context.commit('PRODUCTS_LIST_MUTATION', payload.productsList)
+            context.commit('PRODUCTS_LIST_ADD_MUTATION', payload)
+        },
+        productListRemoveAction(context, payload) {
+            context.commit('PRODUCTS_LIST_UPDATE_MUTATION', payload)
         }
     },
     getters: {

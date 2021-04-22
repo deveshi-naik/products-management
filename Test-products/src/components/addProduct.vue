@@ -76,14 +76,18 @@ export default {
         onSubmit() {
             let productData = {}
             productData = {
+                id: this._uid,
                 title: this.title,
                 description: this.description,
                 price: this.price,
                 rating: this.rating,
                 location: this.location,
                 imgURL: this.imgURL,
+                trashFlag: false
             }
             this.$store.dispatch("productListAction", productData);
+            this.onReset();
+            this.$router.push({ name: 'Home' })
         },
         onReset() {
             this.title = '',
